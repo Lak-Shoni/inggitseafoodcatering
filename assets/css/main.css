@@ -1697,9 +1697,9 @@ section,
   padding-right: 5px;
 }
 
-.faq .faq-container .faq-item h3:hover {
+/* .faq .faq-container .faq-item h3:hover {
   color: var(--accent-color);
-}
+} */
 
 .faq .faq-container .faq-item .faq-content {
   display: grid;

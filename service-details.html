@@ -46,8 +46,8 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   </head>
-  <!-- <style>
-    #pdf-thumbnail-container {
+  <style>
+    /* #pdf-thumbnail-container {
       max-width: 340px;
       margin: 20px auto;
       padding: 16px;
@@ -55,8 +55,26 @@
       border-radius: 12px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       text-align: center;
+    } */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 5px solid #ccc;
+      border-top: 5px solid #01562c;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
     }
-  </style> -->
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 
   <body class="service-details-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
@@ -153,8 +171,6 @@
           </div>
         </div>
       </section>
-
-      
     </main>
 
     <footer id="footer" class="footer light-background">
@@ -258,7 +274,11 @@
             event.preventDefault();
 
             const pdfUrl = this.getAttribute("data-pdf");
-            pdfThumbnailContainer.innerHTML = "<p>Loading preview...</p>";
+            pdfThumbnailContainer.innerHTML = 
+            '<div id="loading-spinner" style="text-align: center; margin: 20px 0;">' +
+                '<div class="spinner"></div>' +
+                '<p>Memuat preview katalog...</p>' +
+            '</div>';
 
             // Load PDF.js
             const loadingTask = pdfjsLib.getDocument(pdfUrl);
